@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Assistant - Mathur Medicose</title>
+    <link rel="stylesheet" href="chatbot-styles.css">
+</head>
+<body>
+    <!-- Chatbot Button (Floating) -->
+    <button class="chatbot-toggle" id="chatbot-toggle" onclick="toggleChatbot()">
+        <span class="chat-icon">💬</span>
+        <span class="chat-text">Medical Assistant</span>
+    </button>
+
+    <!-- Chatbot Window -->
+    <div class="chatbot-container" id="chatbot-container">
+        <div class="chatbot-header">
+            <div class="header-left">
+                <span class="bot-avatar">🏥</span>
+                <div>
+                    <h3>Medical Assistant</h3>
+                    <p class="status">Powered by AI • Mathur Medicose</p>
+                </div>
+            </div>
+            <button class="close-btn" onclick="toggleChatbot()">✕</button>
+        </div>
+
+        <div class="chatbot-messages" id="chatbot-messages">
+            <div class="message bot-message">
+                <div class="message-avatar">🏥</div>
+                <div class="message-content">
+                    <p>Hello! I'm your Medical Assistant. 👋</p>
+                    <p>I can help you with:</p>
+                    <ul>
+                        <li>💊 Medicine suggestions based on symptoms</li>
+                        <li>🩺 Health advice and precautions</li>
+                        <li>📋 Treatment recommendations</li>
+                        <li>❓ General health queries</li>
+                    </ul>
+                    <p><strong>How can I assist you today?</strong></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="quick-questions">
+            <button class="quick-btn" onclick="sendQuickQuestion('I have fever and headache')">
+                🤒 Fever & Headache
+            </button>
+            <button class="quick-btn" onclick="sendQuickQuestion('I have cold and cough')">
+                🤧 Cold & Cough
+            </button>
+            <button class="quick-btn" onclick="sendQuickQuestion('Stomach pain')">
+                🤕 Stomach Pain
+            </button>
+        </div>
+
+        <div class="chatbot-input">
+            <input 
+                type="text" 
+                id="user-input" 
+                placeholder="Describe your symptoms or ask a question..."
+                onkeypress="handleKeyPress(event)"
+            />
+            <button class="send-btn" onclick="sendMessage()">
+                <span>➤</span>
+            </button>
+        </div>
+
+        <div class="chatbot-footer">
+            <small>⚠️ This is AI-powered advice. Please consult a doctor for serious conditions.</small>
+        </div>
+    </div>
+
+    <script src="chatbot-script.js"></script>
+</body>
+</html>
